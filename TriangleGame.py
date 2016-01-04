@@ -618,23 +618,100 @@ class StructuredNetwork:
 
         return return_string
 
-regions = {Region({1},  8, [2,  3,  9]),
-           Region({2},  3, [9,  3,  4]),
-           Region({3},  5, [1,  2,  8]),
-           Region({4},  2, [2,  9, 10, 8]),
-           Region({5},  4, [9,  4, 10]),
-           Region({6},  8, [1,  8,  7]),
-           Region({7}, 10, [8, 10,  6, 7]),
-           Region({8},  1, [6, 10,  4]),
-           Region({9},  9, [6,  4,  5])}
+regions_1 = {Region({1},  8, [2,  3,  9]),
+             Region({2},  3, [9,  3,  4]),
+             Region({3},  5, [1,  2,  8]),
+             Region({4},  2, [2,  9, 10, 8]),
+             Region({5},  4, [9,  4, 10]),
+             Region({6},  8, [1,  8,  7]),
+             Region({7}, 10, [8, 10,  6, 7]),
+             Region({8},  1, [6, 10,  4]),
+             Region({9},  9, [6,  4,  5])}
 
-straight_lines = [StraightLineSegment({1, 2, 3}),
-                  StraightLineSegment({1, 8, 10, 4}),
-                  StraightLineSegment({1, 7, 6, 5}),
-                  StraightLineSegment({2, 8, 7}),
-                  StraightLineSegment({3, 9, 10, 6}),
-                  StraightLineSegment({2, 9, 4}),
-                  StraightLineSegment({3, 4, 5})]
+straight_lines_1 = [StraightLineSegment({1, 2, 3}),
+                    StraightLineSegment({1, 8, 10, 4}),
+                    StraightLineSegment({1, 7, 6, 5}),
+                    StraightLineSegment({2, 8, 7}),
+                    StraightLineSegment({3, 9, 10, 6}),
+                    StraightLineSegment({2, 9, 4}),
+                    StraightLineSegment({3, 4, 5})]
 
-triangle_game_test = StructuredNetwork(regions, straight_lines)
-print(triangle_game_test)
+triangle_game_1 = StructuredNetwork(regions_1, straight_lines_1)
+
+regions_2 = {Region({1}, 1, [4, 5, 8, 7]),
+             Region({2}, 2, [7, 8, 11, 10]),
+             Region({3}, 3, [10, 11, 14, 13]),
+             Region({4}, 4, [13, 14, 17, 16]),
+             Region({5}, 0, [3, 4, 7, 6]),
+             Region({6}, 6, [6, 7, 10, 9]),
+             Region({7}, 3, [9, 10, 13, 12]),
+             Region({8}, 0, [12, 13, 16, 15]),
+             Region({9}, 0, [2, 3, 6]),
+             Region({10}, 8, [1, 2, 6, 9]),
+             Region({11}, 0, [1, 9, 12]),
+             Region({12}, 0, [1, 12, 15])}
+
+straight_lines_2 = [StraightLineSegment({1, 2, 3, 4, 5}),
+                    StraightLineSegment({2, 6, 7, 8}),
+                    StraightLineSegment({1, 9, 10, 11}),
+                    StraightLineSegment({1, 12, 13, 14}),
+                    StraightLineSegment({1, 15, 16 ,17}),
+                    StraightLineSegment({3, 6, 9, 12, 15}),
+                    StraightLineSegment({4, 7, 10, 13, 16}),
+                    StraightLineSegment({5, 8, 11, 14, 17})]
+
+triangle_game_2 = StructuredNetwork(regions_2, straight_lines_2)
+
+regions_3 = {Region({1}, 7, [1, 2, 15]),
+             Region({2}, 8, [15, 2, 3, 16, 14]),
+             Region({3}, 0, [14, 16, 17]),
+             Region({4}, 3, [13, 14, 17]),
+             Region({5}, 9, [12, 13, 17, 20, 11]),
+             Region({6}, 0, [17, 16, 19, 20]),
+             Region({7}, 4, [16, 3, 4, 18, 19]),
+             Region({8}, 0, [4, 5, 18]),
+             Region({9}, 4, [19, 18, 5, 6, 21]),
+             Region({10}, 0, [19, 21, 22, 20]),
+             Region({11}, 4, [20, 22, 10, 11]),
+             Region({12}, 1, [6, 7, 21]),
+             Region({13}, 2, [21, 7, 8, 9, 22]),
+             Region({14}, 3, [22, 9, 10])}
+
+straight_lines_3 = [StraightLineSegment({1, 15, 14, 13, 12}),
+                    StraightLineSegment({4, 18, 19, 20, 11}),
+                    StraightLineSegment({6, 21, 22, 10}),
+                    StraightLineSegment({1, 2, 3, 4, 5, 6, 7, 8}),
+                    StraightLineSegment({12, 11, 10, 9, 8}),
+                    StraightLineSegment({13, 17, 16, 3}),
+                    StraightLineSegment({14, 16, 19, 21, 7}),
+                    StraightLineSegment({14, 17, 20, 22, 9})]
+
+triangle_game_3 = StructuredNetwork(regions_3, straight_lines_3)
+
+regions_4 = {Region({1}, 10, [1, 9, 8]),
+             Region({2}, 5, [9, 10, 7, 8]),
+             Region({3}, 6, [10, 11, 6, 7]),
+             Region({4}, 3, [6, 11, 5]),
+             Region({5}, 4, [1, 2, 9]),
+             Region({6}, 0, [9, 2, 12, 10]),
+             Region({7}, 0, [10, 12, 4, 11]),
+             Region({8}, 4, [11, 4, 5]),
+             Region({9}, 3, [2, 3, 12]),
+             Region({10}, 3, [12, 3, 4])}
+
+straight_lines_4 = [StraightLineSegment({1, 2, 3}),
+                    StraightLineSegment({1, 9, 10}),
+                    StraightLineSegment({1, 8, 7, 6, 5}),
+                    StraightLineSegment({2, 9, 8}),
+                    StraightLineSegment({3, 12, 10, 7}),
+                    StraightLineSegment({4, 11, 6}),
+                    StraightLineSegment({2, 12, 4}),
+                    StraightLineSegment({3, 4, 5}),
+                    StraightLineSegment({10, 11, 5})]
+
+triangle_game_4 = StructuredNetwork(regions_4, straight_lines_4)
+
+print(triangle_game_1)
+print(triangle_game_2)
+print(triangle_game_3)
+print(triangle_game_4)
