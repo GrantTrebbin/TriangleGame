@@ -17,9 +17,16 @@ The first step is to remove all that's irrelevant, restating the problem in a si
 
 ![](https://github.com/GrantTrebbin/TriangleGame/blob/master/drawing1.png)
 
-asdf
+To solve the problem, the program needs to know the structure of the graph.  This is done by identifying all individual regions, naming them, specifying their values, and the vertices that define them.  For each region the vertices need to be defined in a consistent clockwise or anti-clockwise manner.  For instance, the region mentioned above would be defined using a Region object like this:
 
-asdf
+Region({3}, 5, [1, 2, 8])
+
+All of the regions are then stored in a set.
+
+The software also needs to know all the straight lines in the graph to understand its geometric structure.  All of these need to be identified and stored as a list of StraightLineSegment objects.
+
+Both the region and straight line information is then used to create a StructuredNetwork Object.
+
 ```python
 regions_1 = {Region({1},  8, [2,  3,  9]),
              Region({2},  3, [9,  3,  4]),
@@ -41,7 +48,7 @@ straight_lines_1 = [StraightLineSegment({1, 2, 3}),
 
 triangle_game_1 = StructuredNetwork(regions_1, straight_lines_1)
 ```
-
+Printing the StucturedNetwork will show all the information about the graph.  At the end is a listing of all the triangluar regions, their values and total sum.
 ```
 Triangular Regions ({id} =value= *vertices*)
 count = 22
